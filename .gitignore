@@ -1,0 +1,17 @@
+# Binary
+g2o
+
+.env
+.claude
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+
+# Test
+coverage.out
