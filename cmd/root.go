@@ -4,8 +4,8 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/chazzy/g2o/cmd/lab"
-	"github.com/chazzy/g2o/internal/root"
+	"github.com/chazzychouse/g2o/cmd/lab"
+	"github.com/chazzychouse/g2o/internal/root"
 	"github.com/spf13/cobra"
 )
 

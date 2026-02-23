@@ -6,7 +6,7 @@ import (
 	"strconv"
 	"time"
 
-	"github.com/chazzy/g2o/internal/styles"
+	"github.com/chazzychouse/g2o/internal/styles"
 	gitlab "gitlab.com/gitlab-org/api/client-go"
 )
 

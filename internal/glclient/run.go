@@ -5,8 +5,8 @@ import (
 	"fmt"
 	"strconv"
 
-	"github.com/chazzy/g2o/internal/store"
-	"github.com/chazzy/g2o/internal/styles"
+	"github.com/chazzychouse/g2o/internal/store"
+	"github.com/chazzychouse/g2o/internal/styles"
 )
 
 func (g GitLab) RunGroups() error {

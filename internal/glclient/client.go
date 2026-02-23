@@ -5,7 +5,7 @@ import (
 	"io"
 	"log/slog"
 
-	"github.com/chazzy/g2o/internal/store"
+	"github.com/chazzychouse/g2o/internal/store"
 	gitlab "gitlab.com/gitlab-org/api/client-go"
 )
 

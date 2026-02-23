@@ -1,7 +1,7 @@
 package main
 
 import (
-	"github.com/chazzy/g2o/cmd"
+	"github.com/chazzychouse/g2o/cmd"
 	"github.com/joho/godotenv"
 )
 

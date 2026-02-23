@@ -1,4 +1,4 @@
-module github.com/chazzy/g2o
+module github.com/chazzychouse/g2o
 
 go 1.25.7
 

@@ -5,7 +5,7 @@ import (
 	"strings"
 
 	prompt "github.com/c-bata/go-prompt"
-	"github.com/chazzy/g2o/internal/styles"
+	"github.com/chazzychouse/g2o/internal/styles"
 )
 
 // replCmd is a node in the command tree. Each node matches a literal token

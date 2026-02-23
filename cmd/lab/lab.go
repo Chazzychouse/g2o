@@ -8,10 +8,10 @@ import (
 	"strings"
 
 	prompt "github.com/c-bata/go-prompt"
-	"github.com/chazzy/g2o/internal/glclient"
-	"github.com/chazzy/g2o/internal/store"
-	"github.com/chazzy/g2o/internal/styles"
-	gosync "github.com/chazzy/g2o/internal/sync"
+	"github.com/chazzychouse/g2o/internal/glclient"
+	"github.com/chazzychouse/g2o/internal/store"
+	"github.com/chazzychouse/g2o/internal/styles"
+	gosync "github.com/chazzychouse/g2o/internal/sync"
 	"github.com/spf13/cobra"
 )
 

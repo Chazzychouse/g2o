@@ -5,9 +5,9 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/chazzy/g2o/internal/glclient"
-	"github.com/chazzy/g2o/internal/store"
-	"github.com/chazzy/g2o/internal/styles"
+	"github.com/chazzychouse/g2o/internal/glclient"
+	"github.com/chazzychouse/g2o/internal/store"
+	"github.com/chazzychouse/g2o/internal/styles"
 )
 
 type Syncer struct {
