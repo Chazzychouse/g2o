@@ -1,7 +1,9 @@
 package glclient
 
 import (
+	"context"
 	"fmt"
+	"time"
 
 	"github.com/chazzy/g2o/internal/styles"
 	gitlab "gitlab.com/gitlab-org/api/client-go"
@@ -31,6 +33,36 @@ func (g GitLab) MyProjects() ([]*gitlab.Project, error) {
 		}
 	}
 	return active, nil
+}
+
+// AllProjects fetches all projects with pagination and optional LastActivityAfter filter.
+func (g GitLab) AllProjects(ctx context.Context, lastActivityAfter *time.Time) ([]*gitlab.Project, error) {
+	var all []*gitlab.Project
+	page := int64(1)
+	for {
+		opts := &gitlab.ListProjectsOptions{
+			ListOptions: gitlab.ListOptions{PerPage: perPage, Page: page},
+			Membership:  gitlab.Ptr(true),
+			Archived:    gitlab.Ptr(false),
+		}
+		if lastActivityAfter != nil {
+			opts.LastActivityAfter = lastActivityAfter
+		}
+		projects, resp, err := g.client.Projects.ListProjects(opts)
+		if err != nil {
+			return nil, ErrListProjectsFailed
+		}
+		for _, p := range projects {
+			if p.MarkedForDeletionOn == nil {
+				all = append(all, p)
+			}
+		}
+		if resp.NextPage == 0 {
+			break
+		}
+		page = resp.NextPage
+	}
+	return all, nil
 }
 
 func listProjects(projects []*gitlab.Project) {

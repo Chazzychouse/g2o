@@ -1,5 +1,11 @@
 # Binary
 g2o
+g2o.exe
+bin/
+
+# Go build artifacts (when using project-local GOTMPDIR/GOCACHE)
+tmp/
+cache/
 
 .env
 .claude
@@ -16,3 +22,12 @@ g2o
 # Test
 coverage.out
 bin*
+
+# Debug
+*.debug.log
+
+# Local data store
+.g2o/
+*.db
+*.db-wal
+*.db-shm
