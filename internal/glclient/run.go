@@ -1,6 +1,10 @@
 package glclient
 
-import "fmt"
+import (
+	"fmt"
+
+	"github.com/chazzy/g2o/internal/styles"
+)
 
 func (g GitLab) RunGroups() error {
 	groups, err := g.MyGroups()
@@ -25,6 +29,9 @@ func (g GitLab) RunCurrentUser() error {
 	if err != nil {
 		return err
 	}
-	fmt.Printf("name:     %s\nusername: %s\nemail:    %s\n", user.Name, user.Username, user.Email)
+	fmt.Printf("%s %s\n%s %s\n%s %s\n",
+		styles.Label.Render("name:    "), styles.Value.Render(user.Name),
+		styles.Label.Render("username:"), styles.Value.Render(user.Username),
+		styles.Label.Render("email:   "), styles.Value.Render(user.Email))
 	return nil
 }

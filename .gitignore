@@ -15,3 +15,4 @@ g2o
 
 # Test
 coverage.out
+bin*

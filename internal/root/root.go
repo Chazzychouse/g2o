@@ -1,8 +1,12 @@
 package root
 
-import "fmt"
+import (
+	"fmt"
+
+	"github.com/chazzy/g2o/internal/styles"
+)
 
 func Run() error {
-	fmt.Println("Hello from g2o! Use --help to see available commands.")
+	fmt.Println(styles.Banner.Render("g2o") + " — Use --help to see available commands.")
 	return nil
 }

@@ -3,17 +3,20 @@ package glclient
 import (
 	"fmt"
 
+	"github.com/chazzy/g2o/internal/styles"
 	gitlab "gitlab.com/gitlab-org/api/client-go"
 )
 
 type Project struct{ *gitlab.Project }
 
 func (p Project) String() string {
-	return fmt.Sprintf("%s (%s)", p.Name, p.PathWithNamespace)
+	return fmt.Sprintf("%s %s",
+		styles.Value.Render(p.Name),
+		styles.Label.Render("("+p.PathWithNamespace+")"))
 }
 
 func (g GitLab) MyProjects() ([]*gitlab.Project, error) {
-	projects, _, err := g.Client.Projects.ListProjects(&gitlab.ListProjectsOptions{
+	projects, _, err := g.client.Projects.ListProjects(&gitlab.ListProjectsOptions{
 		Membership: gitlab.Ptr(true),
 		Archived:   gitlab.Ptr(false),
 	})
@@ -31,9 +34,8 @@ func (g GitLab) MyProjects() ([]*gitlab.Project, error) {
 }
 
 func listProjects(projects []*gitlab.Project) {
-	fmt.Printf("Projects: %d\n", len(projects))
+	fmt.Println(styles.Title.Render(fmt.Sprintf("Projects: %d", len(projects))))
 	for _, p := range projects {
 		fmt.Println(Project{p})
-		fmt.Println()
 	}
 }
